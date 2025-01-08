@@ -9,6 +9,8 @@ class MyFIFOHWTestTop extends Module {
   val io = IO(new Bundle{
     val done = Output(Bool())
     val en = Input(Bool())
+    val outData = Output(Vec(16, UInt(8.W)))
+    val outCount = Output(UInt(4.W))
   })
   val target = Module(new MyFIFO)
 
@@ -20,16 +22,24 @@ class MyFIFOHWTestTop extends Module {
 
   val monitor = Module(new DecoupledMonitor(UInt(8.W), 16))
 
+  io.outData := monitor.io.outData
+  io.outCount := monitor.io.outCount
+
   target.io.enq <> driver.io.out
   target.io.deq <> monitor.io.in
 
 }
 
-object MyFIFOHWTestTopSyn extends App {
+object MyFIFOHWTestTopSynthesis extends App {
   (new ChiselStage).execute(
-    Array("--target", "systemverilog"),
+    Array(
+      "--target", "systemverilog",
+    ),
     Seq(
       ChiselGeneratorAnnotation(() => new MyFIFOHWTestTop()),
+      FirtoolOption("-o"),
+      FirtoolOption("generated/"),
+      FirtoolOption("--split-verilog"),
       FirtoolOption("--disable-all-randomization"),
       FirtoolOption("--strip-debug-info"),
     )

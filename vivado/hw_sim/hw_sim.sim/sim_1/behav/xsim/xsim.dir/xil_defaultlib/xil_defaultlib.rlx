@@ -1,0 +1,11 @@
+0.7
+2020.2
+May 22 2024
+18:54:44
+/home/parkdongho/dev/chisel6_env_test/generated/DecoupledDriver.sv,1736323030,systemVerilog,,/home/parkdongho/dev/chisel6_env_test/generated/DecoupledMonitor.sv,,DecoupledDriver,,uvm,,,,,,
+/home/parkdongho/dev/chisel6_env_test/generated/DecoupledMonitor.sv,1736323030,systemVerilog,,/home/parkdongho/dev/chisel6_env_test/generated/MyFIFO.sv,,DecoupledMonitor,,uvm,,,,,,
+/home/parkdongho/dev/chisel6_env_test/generated/MyFIFO.sv,1736323030,systemVerilog,,/home/parkdongho/dev/chisel6_env_test/generated/Queue16_UInt8.sv,,MyFIFO,,uvm,,,,,,
+/home/parkdongho/dev/chisel6_env_test/generated/MyFIFOHWTestTop.sv,1736323030,systemVerilog,,,,MyFIFOHWTestTop,,uvm,,,,,,
+/home/parkdongho/dev/chisel6_env_test/generated/Queue16_UInt8.sv,1736323030,systemVerilog,,/home/parkdongho/dev/chisel6_env_test/generated/ram_16x8.sv,,Queue16_UInt8,,uvm,,,,,,
+/home/parkdongho/dev/chisel6_env_test/generated/ram_16x8.sv,1736323030,systemVerilog,,/home/parkdongho/dev/chisel6_env_test/generated/MyFIFOHWTestTop.sv,,ram_16x8,,uvm,,,,,,
+/home/parkdongho/dev/chisel6_env_test/vivado/hw_sim/hw_sim.sim/sim_1/behav/xsim/glbl.v,1708598507,verilog,,,,glbl,,uvm,,,,,,

@@ -3,22 +3,31 @@
 # SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Wed Jan  8 18:07:30 2025
-# Process ID: 20001
-# Current directory: /home/parkdongho/dev/chisel6_env_test/vivado
-# Command line: vivado .
-# Log file: /home/parkdongho/dev/chisel6_env_test/vivado/vivado.log
-# Journal file: /home/parkdongho/dev/chisel6_env_test/vivado/vivado.jou
+# Start of session at: Wed Jan  8 18:08:07 2025
+# Process ID: 20305
+# Current directory: /home/parkdongho/dev/chisel6_env_test/vivado/hw_sim
+# Command line: vivado hw_sim.xpr
+# Log file: /home/parkdongho/dev/chisel6_env_test/vivado/hw_sim/vivado.log
+# Journal file: /home/parkdongho/dev/chisel6_env_test/vivado/hw_sim/vivado.jou
 # Running On        :thinkpad
 # Platform          :Ubuntu
 # Operating System  :Ubuntu 22.04.5 LTS
 # Processor Detail  :AMD Ryzen 5 5625U with Radeon Graphics
-# CPU Frequency     :3613.793 MHz
+# CPU Frequency     :1796.588 MHz
 # CPU Physical cores:6
 # CPU Logical cores :12
 # Host memory       :40816 MB
 # Swap memory       :2147 MB
 # Total Virtual     :42963 MB
-# Available Virtual :32111 MB
+# Available Virtual :32139 MB
 #-----------------------------------------------------------
 start_gui
+open_project hw_sim.xpr
+update_compile_order -fileset sources_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+refresh_design
+refresh_design
+refresh_design
+refresh_design
+refresh_design
+refresh_design

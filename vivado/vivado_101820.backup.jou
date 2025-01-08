@@ -1,0 +1,34 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Wed Jan  8 16:57:28 2025
+# Process ID: 101820
+# Current directory: /home/parkdongho/dev/chisel6_env_test/vivado
+# Command line: vivado .
+# Log file: /home/parkdongho/dev/chisel6_env_test/vivado/vivado.log
+# Journal file: /home/parkdongho/dev/chisel6_env_test/vivado/vivado.jou
+# Running On        :thinkpad
+# Platform          :Ubuntu
+# Operating System  :Ubuntu 22.04.5 LTS
+# Processor Detail  :AMD Ryzen 5 5625U with Radeon Graphics
+# CPU Frequency     :3701.024 MHz
+# CPU Physical cores:6
+# CPU Logical cores :12
+# Host memory       :40816 MB
+# Swap memory       :2147 MB
+# Total Virtual     :42963 MB
+# Available Virtual :27663 MB
+#-----------------------------------------------------------
+start_gui
+open_project /home/parkdongho/dev/chisel6_env_test/vivado/hw_sim/hw_sim.xpr
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/parkdongho/dev/chisel6_env_test/MyFIFOHWTestTop.sv] -no_script -reset -force -quiet
+remove_files  /home/parkdongho/dev/chisel6_env_test/MyFIFOHWTestTop.sv
+add_files -norecurse {/home/parkdongho/dev/chisel6_env_test/generated/Queue16_UInt8.sv /home/parkdongho/dev/chisel6_env_test/generated/DecoupledDriver.sv /home/parkdongho/dev/chisel6_env_test/generated/MyFIFO.sv /home/parkdongho/dev/chisel6_env_test/generated/DecoupledMonitor.sv /home/parkdongho/dev/chisel6_env_test/generated/MyFIFOHWTestTop.sv /home/parkdongho/dev/chisel6_env_test/generated/ram_16x8.sv}
+update_compile_order -fileset sources_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+launch_simulation
+source MyFIFOHWTestTop.tcl
+close_sim
