@@ -7,15 +7,15 @@ import circt.stage.{ChiselStage, FirtoolOption}
 class MyFIFOHWTestTop extends Module {
   import hwtest._
   val io = IO(new Bundle{
+    val en =   Input(Bool())
     val done = Output(Bool())
-    val en = Input(Bool())
     val outData = Output(Vec(16, UInt(8.W)))
     val outCount = Output(UInt(4.W))
   })
   val target = Module(new MyFIFO)
 
   val driver = Module(new DecoupledDriver(UInt(8.W),
-    Seq(10.U, 20.U, 30.U, 40.U))
+    Seq(10.U, 20.U, 33.U, 40.U))
   )
   io.done := driver.io.done
   driver.io.en := io.en

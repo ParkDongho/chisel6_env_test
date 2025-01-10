@@ -1,7 +1,7 @@
 package fifo
 
 import chisel3._
-import chisel3.stage.ChiselGeneratorAnnotation
+// import chisel3.stage.ChiselGeneratorAnnotation
 import circt.stage._
 import tywaves.simulator._
 import tywaves.simulator.simulatorSettings._
@@ -24,31 +24,35 @@ class MyFIFOHWSimTest extends AnyFunSpec with Matchers {
           chisel3.stage.ChiselGeneratorAnnotation(() => new MyFIFOHWTestTop()),
           FirtoolOption("-g"),
           FirtoolOption("--emit-hgldd"),
-        ),
-      )
-
-      // 2) system verilog 생성
-      (new ChiselStage).execute(
-        Array(
-          "--target", "systemverilog",
-        ),
-        Seq(
-          ChiselGeneratorAnnotation(() => new MyFIFOHWTestTop()),
-          // target directory
-          FirtoolOption("--split-verilog"),
-          FirtoolOption("-o"),
-          FirtoolOption("generated/"),
-
-          // option
           FirtoolOption("--disable-all-randomization"),
           FirtoolOption("--strip-debug-info"),
           FirtoolOption("--preserve-aggregate"),
           FirtoolOption("all")
-        )
+        ),
       )
 
+      // 2) System Verilog 생성
+      // (new ChiselStage).execute(
+      //   Array(
+      //     "--target", "systemverilog",
+      //   ),
+      //   Seq(
+      //     ChiselGeneratorAnnotation(() => new MyFIFOHWTestTop()),
+      //     // target directory
+      //     FirtoolOption("--split-verilog"),
+      //     FirtoolOption("-o"),
+      //     FirtoolOption("generated/"),
+
+      //     // option
+      //     FirtoolOption("--disable-all-randomization"),
+      //     FirtoolOption("--strip-debug-info"),
+      //     FirtoolOption("--preserve-aggregate"),
+      //     FirtoolOption("all")
+      //   )
+      // )
+
       // 3) TyWavesSimulator 를 이용한 ChiselSim 시뮬레이션 실행
-      simulate(new MyFIFOHWTestTop(), Seq(VcdTrace, WithTywavesWaveforms(false)),
+      simulate(new MyFIFOHWTestTop(), Seq(VcdTrace, WithTywavesWaveformsGo(true)),
         simName = "runs_MyFIFOHWTest_correctly_launch_tywaves") {
         fifo => {
           fifo.clock.step(5)
